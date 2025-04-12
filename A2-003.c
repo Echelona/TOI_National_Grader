@@ -2,15 +2,11 @@
 
 int count;
 
-int check(int v_1, int v_2){return v_1 > v_2?1:0;}
-
 void process(int (*arr)[], int findex){
     int cvalue = *(*arr+findex);
     int lvalue = *(*arr+(findex-1));
     int rvalue = *(*arr+(findex+1));
-    int lvalue_chk = check(cvalue, lvalue);
-    int rvalue_chk = check(cvalue, rvalue);
-    if (lvalue_chk && rvalue_chk){
+    if ((cvalue > lvalue) && (cvalue > rvalue)){
         ++count;
     }
 }
